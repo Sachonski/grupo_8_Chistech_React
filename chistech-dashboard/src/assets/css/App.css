@@ -37,32 +37,39 @@ div {
   padding: 2rem;
   box-shadow: black;
   margin: 1rem;
-  outline-style: dotted;
   width: 100%;
 }
 
 .barraSuperior {
   flex-direction: row;
-  background-color: red;
-  outline-style: dotted;
   justify-content: space-between;
 }
 
 .barraInferior {
   flex-direction: row;
-  background-color: teal;
-  outline-style: dotted;
 }
 
 .tablaDetalle {
-  outline-style: dotted;
+  margin: 1rem;
   width: 75%;
   height: 100%;
+  background-color: coral;
 }
 
 .barraLateral {
-  outline-style: dotted;
   width: 25%;
+}
+
+.tarjetaInfo {
+  background-color: grey;
+  border-radius: 2px;
+  margin : 2px
+}
+
+.tarjetaLista {
+  background-color: grey;
+  border-radius: 2px;
+  margin: 2px;
 }
 
 @keyframes App-logo-spin {
