@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -26,6 +27,42 @@
 
 .App-link {
   color: #61dafb;
+}
+
+div {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: black;
+  margin: 1rem;
+  outline-style: dotted;
+  width: 100%;
+}
+
+.barraSuperior {
+  flex-direction: row;
+  background-color: red;
+  outline-style: dotted;
+  justify-content: space-between;
+}
+
+.barraInferior {
+  flex-direction: row;
+  background-color: teal;
+  outline-style: dotted;
+}
+
+.tablaDetalle {
+  outline-style: dotted;
+  width: 75%;
+  height: 100%;
+}
+
+.barraLateral {
+  outline-style: dotted;
+  width: 25%;
 }
 
 @keyframes App-logo-spin {

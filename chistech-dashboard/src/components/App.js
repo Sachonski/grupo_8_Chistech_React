@@ -5,7 +5,10 @@ import Cuerpo from './Cuerpo'
 function App() {
   return (
     <React.Fragment>
+      <div>
+      <h1>DashBoard</h1>
       <Cuerpo />
+      </div>
     </React.Fragment>
   );
 }
