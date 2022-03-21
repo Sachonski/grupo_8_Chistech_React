@@ -1,31 +1,15 @@
-:root {
-  --font1: "Poppins", sans-serif;
-  --font2: "Bebas Neue", cursive;
-  --font3: "Montserrat", sans-serif;
-  --gray-100: rgb(245, 238, 228);
-  --gray-200: rgb(233, 227, 214);
-  --gray-500: rgb(133, 128, 118);
-  --gray-600: rgb(99, 93, 75);
-  --gray-700: rgb(81, 70, 55);
-  --gray-800: rgb(55, 47, 31);  
-  --gray-900: rgb(39, 34, 17);
-  --gray-smoky: rgb(64, 62, 60);
-  --naranja: #e4ab41;
-}
-
-* {
-  position: relative;
-  text-decoration: none;
-  list-style-type: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
+  box-sizing: border-box;
   background-color: #f5f5f5;
   display: inline-block;
-  font-family: var(--font3);
+  background-color: rgb(64, 62, 60);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-size: 3rem;
+  color: rgb(233, 227, 214);
+  padding: 3rem;
 }
 
 div {
@@ -34,50 +18,60 @@ div {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  margin: 1rem;
   width: 100%;
   border-radius: .5rem;
 }
 
+ul {
+  padding: 1,5rem;
+  padding: 0;
+  list-style: none;
+}
+
 li {
   text-decoration: none;
+  list-style: none;
+  font-size: 1rem;
+  color: rgb(39, 34, 17);
 }
 
 .barraSuperior {
-  height: fit-content;
+  margin:0 auto;
+  padding: 2rem;
   flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
-}
+  column-gap: 1.5rem;}
 
 .barraInferior {
-  flex-direction: row;
+  margin:0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 4fr;
+  column-gap: 2rem;
+  align-items: stretch;
 }
 
 .tablaDetalle{
-  width: 75%;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
 -webkit-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
 -moz-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
-background-color: coral;
+background-color: #e4ab41;
 }
 
 .barraLateral{
   flex-direction: column;
-
-  width: 25%;
+  align-items: stretch;
+  justify-content: space-between;
+  row-gap: 1.5rem;
 }
 
 .tarjetaInfo {
-  background-color: rgb(207, 207, 207);
-  box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
--webkit-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
--moz-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
-}
-
-.tarjetaLista {
-  background-color: rgb(207, 207, 207);
+  color: rgb(39, 34, 17);
+  background-color: rgb(133, 128, 118);
   box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
 -webkit-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
 -moz-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
