@@ -76,6 +76,7 @@ function TarjetaInfo(props) {
                 <header>
                     <h2>{props.titulo} {valor.info}</h2>
                 </header>
+         
                 <div>
                     <ul>
                         {valor.array.map((item, index) => <li key={index}>{item}</li>)}
