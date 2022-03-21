@@ -1,8 +1,31 @@
+:root {
+  --font1: "Poppins", sans-serif;
+  --font2: "Bebas Neue", cursive;
+  --font3: "Montserrat", sans-serif;
+  --gray-100: rgb(245, 238, 228);
+  --gray-200: rgb(233, 227, 214);
+  --gray-500: rgb(133, 128, 118);
+  --gray-600: rgb(99, 93, 75);
+  --gray-700: rgb(81, 70, 55);
+  --gray-800: rgb(55, 47, 31);  
+  --gray-900: rgb(39, 34, 17);
+  --gray-smoky: rgb(64, 62, 60);
+  --naranja: #e4ab41;
+}
+
+* {
+  position: relative;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: #f5f5f5;
-  display: block;
-  width: fit-content;
+  display: inline-block;
+  font-family: var(--font3);
 }
 
 div {
@@ -22,6 +45,7 @@ li {
 }
 
 .barraSuperior {
+  height: fit-content;
   flex-direction: row;
   justify-content: space-between;
 }
