@@ -6,6 +6,30 @@ function TablaDetalle() {
         <React.Fragment>
             <div className='tablaDetalle'>
                 <h2>Detalle</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Queso Duro</td>
+                            <td>1</td>
+                            <td>$10</td>
+                            <td>$10</td>
+                        </tr>
+                        <tr>
+                            <td>Queso Duro</td>
+                            <td>1</td>
+                            <td>$10</td>
+                            <td>$10</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </React.Fragment>
     )
