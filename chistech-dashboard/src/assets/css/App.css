@@ -1,7 +1,10 @@
-body {
+body, #root {
   box-sizing: border-box;
   background-color: #f5f5f5;
   background-color: rgb(64, 62, 60);
+  margin: 0;
+  padding: 0;
+  width: 97%;
 }
 
 h1 {
@@ -14,6 +17,8 @@ h2 {
   font-size: 1rem;
   color: rgb(39, 34, 17);
 }
+
+
 
 div {
   text-align: center;
@@ -49,7 +54,7 @@ li {
   margin:0 auto;
   padding: 2rem;
   display: grid;
-  grid-template-columns: 1.5fr 4fr;
+  grid-template-columns: 1.5fr 3.5fr;
   column-gap: 2rem;
   align-items: stretch;
 }
@@ -82,13 +87,4 @@ background-color: #e4ab41;
 .tarjetaInfo div {
   border-radius: 0;
   border-top: rgb(39, 34, 17) solid 2px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
