@@ -8,12 +8,15 @@ function SeccionSuperior() {
             <div className='barraSuperior'>
             <TarjetaInfo 
             titulo = "Productos"
+            link = "mas info"
             /> {/*productos*/}
             <TarjetaInfo 
             titulo = "Usuarios"
+            link = "mas info"
             /> {/*Usuarios*/}
             <TarjetaInfo 
             titulo = "Categorias"
+            link = "mas info"
             /> {/*Categorias*/}
             </div>
         </React.Fragment>

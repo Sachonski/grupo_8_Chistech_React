@@ -1,7 +1,8 @@
 /* eslint-disable no-lone-blocks */
-import { array } from 'prop-types';
 import React, { useState, useEffect } from 'react'
 import getData from '../services/getData';
+import {Link } from 'react-router-dom'
+
 
 const urlProductos = `http://localhost:3030/api/products`;
 const urlUsuarios = `http://localhost:3030/api/users`;
@@ -68,13 +69,14 @@ function TarjetaInfo(props) {
                 setValor(res);
                 
             }
-    }, []);
+    }, [props.titulo]);
 
     return (
         <React.Fragment>
             <div className="tarjetaInfo">
                 <header>
                     <h2>{props.titulo} {valor.info}</h2>
+                    <Link to='#' className='link'>{props.link}</Link>
                 </header>
          
                 <div>
