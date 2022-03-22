@@ -13,7 +13,6 @@ function Productos() {
                         <th>Stock</th>
                         <th>Precio</th>
                         <th>Total</th>
-                        <th>Vendidos</th>
                     </tr>
                 </thead>
                 <tbody>

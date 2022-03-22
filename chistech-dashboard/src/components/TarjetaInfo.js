@@ -13,7 +13,7 @@ const urlUltimosProducto = `http://localhost:3030/api/sales/last`;
 
 
 function TarjetaInfo(props) {
-    const inicio = {info: 'inicio', array: []};
+    const inicio = {info: '', array: []};
 
     let [valor, setValor] = useState(inicio);
 
@@ -65,7 +65,7 @@ function TarjetaInfo(props) {
                 { setValor(obj) }
             })
             .catch((e) => { console.log(e) });}
-            
+
         if (props.titulo === "Categorias") { 
                 const res = {
                     info: 5,
@@ -83,7 +83,7 @@ function TarjetaInfo(props) {
                 <header>
                     <h2>{props.titulo}</h2>
                     <h3>{valor.info}</h3>
-                    <Link to={props.titulo} exact = {true} className = "link" >Mas Info</Link> 
+                    <Link to={props.titulo} exact = {true} className='link'>{props.link}</Link>
                 </header>
                 <div>
                     <ul>
