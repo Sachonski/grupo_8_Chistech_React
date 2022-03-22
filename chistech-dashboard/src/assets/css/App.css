@@ -52,7 +52,7 @@ li {
   margin:0 auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: 1.5fr 3.5fr;
+  grid-template-columns: 1fr 2.1fr;
   column-gap: 2rem;
   align-items: stretch;
 }

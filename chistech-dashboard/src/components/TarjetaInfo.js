@@ -76,7 +76,7 @@ function TarjetaInfo(props) {
             <div className="tarjetaInfo">
                 <header>
                     <h2>{props.titulo} {valor.info}</h2>
-                    <Link to='#' className='link'>{props.link}</Link>
+                    <Link to={props.titulo} className='link'>{props.link}</Link>
                 </header>
          
                 <div>

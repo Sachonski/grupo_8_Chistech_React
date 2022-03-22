@@ -7,6 +7,7 @@ function TablaDetalle() {
             <div className='tablaDetalle'>
                 <h2>Detalle</h2>
                 <table>
+                    {/**! comienza componente detalle */}
                     <thead>
                         <tr>
                             <th>Producto</th>
@@ -29,6 +30,7 @@ function TablaDetalle() {
                             <td>$10</td>
                         </tr>
                     </tbody>
+                    {/**! termina componente detalle */}
                 </table>
             </div>
         </React.Fragment>
