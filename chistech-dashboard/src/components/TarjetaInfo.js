@@ -10,6 +10,7 @@ const urlVentas = `http://localhost:3030/api/sales`;
 const urlVentasTotales = `http://localhost:3030/api/sales/sales`;
 const urlTop5 = `http://localhost:3030/api/sales/top5`;
 const urlUltimosProducto = `http://localhost:3030/api/sales/last`;
+const urlCategorias = `http://localhost:3030/api/sales/category`
 
 
 function TarjetaInfo(props) {
@@ -66,16 +67,23 @@ function TarjetaInfo(props) {
             })
             .catch((e) => { console.log(e) });}
 
-        if (props.titulo === "Categorias") { 
-                const res = {
-                    info: 5,
-                    array: ['Quesos Duros', 'Quesos Blandos', 'Quesos Azules', 'Quesos Frescos', 'Quesos Corteza']
-                };
-                
-                setValor(res);
-                
+            if (props.titulo === "Categorias") {
+                getData(urlCategorias)
+                    .then(res => {
+                        console.log('0');
+                        const obj = {}
+                        console.log('0,5');
+                        obj.info = res.meta.total;
+                        console.log(obj.info);
+                        obj.array = res.data.map(item => item.name);
+                        console.log(obj.array);
+                        {setValor(obj)} 
+                        console.log('3');
+                    })
+                    .catch((e) => { console.log(e) });
             }
     }, [props.titulo]);
+
 
     return (
         <React.Fragment>
