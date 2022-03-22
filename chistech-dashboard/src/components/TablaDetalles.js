@@ -1,37 +1,17 @@
 import React from 'react'
-// import {Link , Route , Switch} from 'react-router-dom'
+import Productos from './Productos.js'
+import Usuarios from './Usuarios'
+import Categorias from './Categorias'
+import {Route} from 'react-router-dom'
+
 
 function TablaDetalle() {
     return (
         <React.Fragment>
             <div className='tablaDetalle'>
-                <h2>Detalle</h2>
-                <table>
-                    {/**! comienza componente detalle */}
-                    <thead>
-                        <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Queso Duro</td>
-                            <td>1</td>
-                            <td>$10</td>
-                            <td>$10</td>
-                        </tr>
-                        <tr>
-                            <td>Queso Duro</td>
-                            <td>1</td>
-                            <td>$10</td>
-                            <td>$10</td>
-                        </tr>
-                    </tbody>
-                    {/**! termina componente detalle */}
-                </table>
+                <Route path='/Productos' exact= {true} component = {Productos}/>
+                <Route path='/Usuarios' exact= {true} component = {Usuarios}/>
+                <Route path='/Categorias' exact= {true} component = {Categorias}/>
             </div>
         </React.Fragment>
     )

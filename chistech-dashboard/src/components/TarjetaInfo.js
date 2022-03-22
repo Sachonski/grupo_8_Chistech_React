@@ -22,20 +22,25 @@ function TarjetaInfo(props) {
         if (props.titulo === "Ultimo Producto Agregado") { getData(urlProductos)
             .then(res => { const ultimo = {}; ultimo.info = ''; ultimo.array =[`${ res.data[res.meta.total - 1].name}`]; { setValor(ultimo) } })
             .catch((e) => { console.log(e) });}
+
         if (props.titulo === 'Cantidad de Productos Vendidos') { getData(urlVentas)
             .then(res => { const total = {}; total.info = ''; total.array = [res.meta.total]; { setValor(total) } })
             .catch((e) => { console.log(e) });}
+
         if (props.titulo === 'Cantidad de Ventas') { getData(urlVentasTotales)
             .then(res => { const total = {}; total.info = ''; total.array = [res.meta.total]; { setValor(total) } })
             .catch((e) => { console.log(e) });}
+            
         if (props.titulo === 'Top 5 de Productos') { getData(urlTop5)
             .then(res => { const top5 = {}; top5.info = ''; top5.array = res.data[0].map(it => it.name); 
             setValor(top5) })
             .catch((e) => { console.log(e) });}
+
         if (props.titulo === 'Ultimas 5 Ventas') { getData(urlUltimosProducto)
             .then(res => { const ultimas = {}; ultimas.info = ''; ultimas.array = res.data.map(it => `Factura: ${it.invoice}`);
             setValor(ultimas) })
             .catch((e) => { console.log(e) });}
+
         if (props.titulo === "Productos") { getData(urlProductos)
             .then(res => { 
                 const obj = {}
@@ -47,6 +52,7 @@ function TarjetaInfo(props) {
                 obj.array = [`Sin Stock: ${sinStockTotal}`, `En Stock: ${StockTotal}`];
                 { setValor(obj) } })
             .catch((e) => { console.log(e) });}
+
         if (props.titulo === "Usuarios") { getData(urlUsuarios)
             .then(res => {
                 const obj = {}
@@ -57,9 +63,9 @@ function TarjetaInfo(props) {
                 const clientesTotal = data.length - adminTotal;
                 obj.array = [`Clientes: ${clientesTotal}`, `Administradores: ${adminTotal}`];
                 { setValor(obj) }
-
             })
             .catch((e) => { console.log(e) });}
+            
         if (props.titulo === "Categorias") { 
                 const res = {
                     info: 5,
@@ -75,10 +81,10 @@ function TarjetaInfo(props) {
         <React.Fragment>
             <div className="tarjetaInfo">
                 <header>
-                    <h2>{props.titulo} {valor.info}</h2>
-                    <Link to={props.titulo} className='link'>{props.link}</Link>
+                    <h2>{props.titulo}</h2>
+                    <h3>{valor.info}</h3>
+                    <Link to={props.titulo} exact = {true} className = "link" >Mas Info</Link> 
                 </header>
-         
                 <div>
                     <ul>
                         {valor.array.map((item, index) => <li key={index}>{item}</li>)}
