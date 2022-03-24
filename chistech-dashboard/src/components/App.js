@@ -6,9 +6,11 @@ import Header from './Header';
 function App() {
   return (
     <React.Fragment>
-      <div>
+      <div className='Navbar'>
         <Header />
-      <Cuerpo />
+      </div>
+      <div>
+        <Cuerpo />
       </div>
     </React.Fragment>
   );

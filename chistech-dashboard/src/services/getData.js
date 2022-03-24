@@ -6,8 +6,8 @@ export default function getData(url) {
             
             return res
         })
-        .catch((error) => {
-            console.log(error);
-        });
+        // .catch((error) => {
+        //     console.log(error);
+        // });
 
 }
