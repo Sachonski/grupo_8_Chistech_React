@@ -115,7 +115,7 @@ function TarjetaInfo(props) {
             strategies[props.titulo]()
             .catch((e) => { console.log('error en ventas', e) });
         }
-    }, [props.titulo])
+    }, []);
 
 
     return (
