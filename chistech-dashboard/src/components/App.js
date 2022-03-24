@@ -1,12 +1,13 @@
 import '../assets/css/App.css';
 import React from 'react';
 import Cuerpo from './Cuerpo'
+import Header from './Header';
 
 function App() {
   return (
     <React.Fragment>
       <div>
-      <h1>DashBoard</h1>
+        <Header />
       <Cuerpo />
       </div>
     </React.Fragment>

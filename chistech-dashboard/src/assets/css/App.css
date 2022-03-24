@@ -1,7 +1,22 @@
-body, #root {
+:root {
+  --font1: "Poppins", sans-serif;
+  --font2: "Bebas Neue", cursive;
+  --font3: "Montserrat", sans-serif;
+  --gray-100: rgb(245, 238, 228);
+  --gray-200: rgb(233, 227, 214);
+  --gray-500: rgb(133, 128, 118);
+  --gray-600: rgb(99, 93, 75);
+  --gray-700: rgb(81, 70, 55);
+  --gray-800: rgb(55, 47, 31);  
+  --gray-900: rgb(39, 34, 17);
+  --gray-smoky: rgb(64, 62, 60);
+  --naranja: #e4ab41;
+}
+
+
+body {
   box-sizing: border-box;
-  background-color: #f5f5f5;
-  background-color: rgb(64, 62, 60);
+  background-color: var(--gray-500);
   margin: 0;
   padding: 0;
   width: 97%;
@@ -9,7 +24,7 @@ body, #root {
 
 h1 {
   font-size: 2rem;
-  color: rgb(233, 227, 214);
+  color: var(--gray-900);
   padding: 1rem;
 }
 
@@ -85,7 +100,7 @@ table {
 
 .tarjetaInfo {
   color: rgb(39, 34, 17);
-  background-color: rgb(133, 128, 118);
+  background-color: var(--gray-100);
   box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
 -webkit-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
 -moz-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
@@ -101,4 +116,11 @@ table {
 .tarjetaInfo div {
   border-radius: 0;
   border-top: rgb(39, 34, 17) solid 2px;
+}
+
+.logo {
+  height: 20%;
+  width: 20%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
