@@ -4,13 +4,13 @@ import getData from '../services/getData';
 import { Link } from 'react-router-dom'
 
 
-const urlProductos = `http://localhost:3030/api/products`;
-const urlUsuarios = `http://localhost:3030/api/users`;
-const urlVentas = `http://localhost:3030/api/sales`;
-const urlVentasTotales = `http://localhost:3030/api/sales/sales`;
-const urlTop5 = `http://localhost:3030/api/sales/top5`;
-const urlUltimosProducto = `http://localhost:3030/api/sales/last`;
-const urlCategorias = `http://localhost:3030/api/sales/category`
+const urlProductos = `products`;
+const urlUsuarios = `users`;
+const urlVentas = `sales`;
+const urlVentasTotales = `sales/sales`;
+const urlTop5 = `sales/top5`;
+const urlUltimosProducto = `sales/last`;
+const urlCategorias = `sales/category`
 
 
 
@@ -23,80 +23,97 @@ function TarjetaInfo(props) {
 
         Categorias: () => getData(urlCategorias)
             .then(res => {
-                console.log('0');
-                const obj = {}
-                console.log('0,5');
-                obj.info = res.meta.total;
-                console.log(obj.info);
-                obj.array = res.data.map(item => item.name);
-                console.log(obj.array);
-                { setValor(obj) }
-                console.log('3');
-            })
-            .catch((e) => { console.log(e) }),
+                const obj = {
+                    info: res.meta.total,
+                    array: res.data.map(item => item.name)
+                }
+                setValor(obj);
+            }),
+        // .catch((e) => { console.log(e) }),
 
         Productos: () => getData(urlProductos)
             .then(res => {
-                const obj = {}
-                obj.info = res.meta.total;
+                const obj = {
+                    info: res.meta.total
+                }
                 const data = res.data;
                 const arrayStock = data.filter(item => item.stock === 1);
                 const StockTotal = arrayStock.length;
                 const sinStockTotal = data.length - StockTotal;
                 obj.array = [`Sin Stock: ${sinStockTotal}`, `En Stock: ${StockTotal}`];
-                { setValor(obj) }
-            })
-            .catch((e) => { console.log(e) }),
+                setValor(obj);
+            }),
+        // .catch((e) => { console.log(e) }),
 
-            "Ultimo Producto Agregado" : () => getData(urlProductos)
+        "Ultimo Producto Agregado": () => getData(urlProductos)
             .then(res => {
-                const ultimo = {
-                    info : "",
-                    array : [`${res.data[res.meta.total - 1].name}`]
+                const obj = {
+                    info: "",
+                    array: [`${res.data[res.meta.total - 1].name}`]
                 };
-                setValor(ultimo)
-            })
-            .catch((e) => { console.log(e) }),
+                setValor(obj)
+            }),
+        // .catch((e) => { console.log(e) }),
 
-            Usuarios: () => getData(urlUsuarios)
+        Usuarios: () => getData(urlUsuarios)
             .then(res => {
-                const obj = {}
-                obj.info = res.meta.total;
+                const obj = {
+                    info: res.meta.total
+                }
                 const data = res.data;
                 const arrayAdmin = data.filter(item => item.admin === 1);
                 const adminTotal = arrayAdmin.length;
                 const clientesTotal = data.length - adminTotal;
                 obj.array = [`Clientes: ${clientesTotal}`, `Administradores: ${adminTotal}`];
-                { setValor(obj) }
-            })
-            .catch((e) => { console.log(e) }),
+                setValor(obj);
+            }),
+        // .catch((e) => { console.log(e) }),
 
-            'Cantidad de Productos Vendidos' : () => getData(urlVentas)
-            .then(res => { const total = {}; total.info = ''; total.array = [res.meta.total]; { setValor(total) } })
-            .catch((e) => { console.log(e) }),
-            
-            'Cantidad de Ventas' : () =>  getData(urlVentasTotales)
-            .then(res => { const total = {}; total.info = ''; total.array = [res.meta.total]; { setValor(total) } })
-            .catch((e) => { console.log(e) }),
-
-            'Top 5 de Productos' : () => getData(urlTop5)
+        'Cantidad de Productos Vendidos': () => getData(urlVentas)
             .then(res => {
-                const top5 = {}; top5.info = ''; top5.array = res.data[0].map(it => it.name);
+                const total = {
+                    info: '',
+                    array: [res.meta.total]
+                };
+                setValor(total);
+            }),
+        // .catch((e) => { console.log(e) }),
+
+        'Cantidad de Ventas': () => getData(urlVentasTotales)
+            .then(res => {
+                const total = {
+                    info: '',
+                    array: [res.meta.total]
+                };
+                setValor(total);
+            }),
+        // .catch((e) => { console.log(e) }),
+
+        'Top 5 de Productos': () => getData(urlTop5)
+            .then(res => {
+                const top5 = { 
+                    info : '', 
+                    array : res.data[0].map(it => it.name)
+                };
                 setValor(top5)
-            })
-            .catch((e) => { console.log(e) }),
+            }),
+        // .catch((e) => { console.log(e) }),
 
-            'Ultimas 5 Ventas' : () => getData(urlUltimosProducto)
+        'Ultimas 5 Ventas': () => getData(urlUltimosProducto)
             .then(res => {
-                const ultimas = {}; ultimas.info = ''; ultimas.array = res.data.map(it => `Factura: ${it.invoice}`);
+                const ultimas = { 
+                    info : '',
+                    array : res.data.map(it => `Factura: ${it.invoice}`)
+                };
                 setValor(ultimas)
             })
-            .catch((e) => { console.log('error en ventas' , e) })
+            // .catch((e) => { console.log('error en ventas', e) })
     }
 
     useEffect(() => {
-        if(props.titulo){
-            strategies[props.titulo]();
+        if (props.titulo) {
+            strategies[props.titulo]()
+            .catch((e) => { console.log('error en ventas', e) });
         }
     }, [props.titulo])
 
