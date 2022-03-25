@@ -135,18 +135,21 @@ table {
 }
 
 .header {
-  padding: 2rem;
-  margin: 0 auto;
+  width: 97%;
   background-color: var(--gray-100);
   display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-}
+  background-color: var(--gray-100);
+  box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
+  -webkit-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
+  -moz-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem
+  }
 
-.header li {
-  align-content: space-between;
-}
+
 
 .navbar {
   display: flex;
