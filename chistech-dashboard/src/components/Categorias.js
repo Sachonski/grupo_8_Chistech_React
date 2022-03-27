@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
+import getData from '../services/getData';
+import { Link } from 'react-router-dom'
+const urlCategorias = `sales/category`;
+let categories = [];
 
+function Categorias(props) {
 
-function Categorias() {
+    const inicio3 = {array: [] };
+        
+    getData(urlCategorias)
+        .then(res =>   {
+            const obj3 = {
+                              
+                array: res.data.map(item => item)
+            }
+            const data = res.data;
+           
+            categories = obj3.array
+            console.log(categories);
+        }
+    )
     return (
         <React.Fragment>
             <h1 className='headDetalle'>Categorias</h1>
@@ -9,26 +27,25 @@ function Categorias() {
                 {/* comienza componente detalle */}
                 <thead>
                     <tr>
-                        <th>Id categoria</th>
+                        <th>Id</th>
                         <th>Categoria</th>
-                        <th>Productos c/stock</th>
-                        <th>Productos s/stock</th>
-                       
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Quesos Frescos</td>
-                        <td>14</td>
-                        <td>4</td>
-                    </tr>
-                  
+                        {categories.map(category => <tr>
+                            <td>{category.id}</td>
+                            <td>{category.name}</td>
+                            </tr>
+                        
+                        )}  
                 </tbody>
                 {/* termina componente detalle */}
             </table>
+
         </React.Fragment>
     );
 }
 
 export default Categorias
+
+
