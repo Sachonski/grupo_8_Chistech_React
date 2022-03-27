@@ -9,6 +9,7 @@ function TablaDetalle() {
     return (
         <React.Fragment>
             <div className='tablaDetalle'>
+                <Route path='/' exact= {true} component = {Productos}/>
                 <Route path='/Productos' exact= {true} component = {Productos}/>
                 <Route path='/Usuarios' exact= {true} component = {Usuarios}/>
                 <Route path='/Categorias' exact= {true} component = {Categorias}/>

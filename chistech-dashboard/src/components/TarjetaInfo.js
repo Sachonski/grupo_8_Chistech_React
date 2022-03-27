@@ -42,6 +42,7 @@ function TarjetaInfo(props) {
                 const sinStockTotal = data.length - StockTotal;
                 obj.array = [`Sin Stock: ${sinStockTotal}`, `En Stock: ${StockTotal}`];
                 setValor(obj);
+                
             }),
         // .catch((e) => { console.log(e) }),
 

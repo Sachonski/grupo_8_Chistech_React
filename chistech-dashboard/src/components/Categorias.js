@@ -9,25 +9,21 @@ function Categorias() {
                 {/* comienza componente detalle */}
                 <thead>
                     <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                        <th>Total</th>
+                        <th>Id categoria</th>
+                        <th>Categoria</th>
+                        <th>Productos c/stock</th>
+                        <th>Productos s/stock</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Queso Duro</td>
                         <td>1</td>
-                        <td>$10</td>
-                        <td>$10</td>
+                        <td>Quesos Frescos</td>
+                        <td>14</td>
+                        <td>4</td>
                     </tr>
-                    <tr>
-                        <td>Queso Duro</td>
-                        <td>1</td>
-                        <td>$10</td>
-                        <td>$10</td>
-                    </tr>
+                  
                 </tbody>
                 {/* termina componente detalle */}
             </table>

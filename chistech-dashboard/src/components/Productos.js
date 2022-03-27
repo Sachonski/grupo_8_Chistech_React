@@ -12,7 +12,7 @@ function Productos() {
                         <th>Producto</th>
                         <th>Stock</th>
                         <th>Precio</th>
-                        <th>Total</th>
+                        <th>Ventas</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,7 +20,7 @@ function Productos() {
                         <td>Queso Duro</td>
                         <td>1</td>
                         <td>$10</td>
-                        <td>$10</td>
+                        <td>$100</td>
                     </tr>
                 </tbody>
                 {/* termina componente detalle */}

@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
+import getData from '../services/getData';
+import { Link } from 'react-router-dom'
+const urlUsuarios = `users`;
 
 
-function Usuarios() {
+function Usuarios(props) {
+
+    const inicio = { info: '', array: [] };
+    let [valor, setValor] = useState(inicio);
+    let datita = [];
+    fetch(urlUsuarios)
+        .then(res =>   {
+            const obj = {
+                
+                info: res.meta.total,
+                array: res.data.map(item => item.name)
+            
+            }
+            const data = res.data;
+            setValor(obj);
+            console.log(res.data)
+        }
+    )
+ 
+  
     return (
         <React.Fragment>
             <h1 className='headDetalle'>Usuarios</h1>
@@ -9,27 +31,21 @@ function Usuarios() {
                 {/* comienza componente detalle */}
                 <thead>
                     <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                        <th>Total</th>
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Admin</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Queso Duro</td>
-                        <td>1</td>
-                        <td>$10</td>
-                        <td>$10</td>
-                    </tr>
-                    <tr>
-                        <td>Queso Duro</td>
-                        <td>1</td>
-                        <td>$10</td>
-                        <td>$10</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
-                {/* termina componente detalle */}
+                
             </table>
 
         </React.Fragment>
