@@ -2,29 +2,28 @@ import React, { useState, useEffect } from 'react'
 import getData from '../services/getData';
 import { Link } from 'react-router-dom'
 const urlUsuarios = `users`;
-
+let cosito = [];
 
 function Usuarios(props) {
 
-    const inicio = { info: '', array: [] };
-    let [valor, setValor] = useState(inicio);
-    let datita = [];
-    fetch(urlUsuarios)
+    const inicio = {array: [] };
+        
+    getData(urlUsuarios)
         .then(res =>   {
             const obj = {
-                
-                info: res.meta.total,
-                array: res.data.map(item => item.name)
-            
+                              
+                array: res.data.map(item => item)
             }
             const data = res.data;
-            setValor(obj);
-            console.log(res.data)
+           
+            cosito = obj.array
+            
         }
     )
  
   
-    return (
+  
+        return (
         <React.Fragment>
             <h1 className='headDetalle'>Usuarios</h1>
             <table>
@@ -45,7 +44,7 @@ function Usuarios(props) {
                         <td></td>
                     </tr>
                 </tbody>
-                
+                {/* termina componente detalle */}
             </table>
 
         </React.Fragment>
