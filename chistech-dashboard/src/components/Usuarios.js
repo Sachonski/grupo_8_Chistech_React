@@ -4,7 +4,7 @@ import React from 'react';
 function Usuarios() {
     return (
         <React.Fragment>
-            <h1>Usuarios</h1>
+            <h1 className='headDetalle'>Usuarios</h1>
             <table>
                 {/* comienza componente detalle */}
                 <thead>

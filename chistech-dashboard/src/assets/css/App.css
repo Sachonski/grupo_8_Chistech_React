@@ -87,11 +87,16 @@ li {
 -webkit-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
 -moz-box-shadow: 15px 13px 30px -13px rgba(0,0,0,0.49);
 background-color: #e4ab41;
+color:rgba(253, 252, 252, 0.9);
 
 }
 
+.headDetalle {
+  color:rgba(253, 252, 252, 0.9);
+}
+
 table {
-  background-color: rgba(0,0,0,0.49);
+  background-color: rgba(29, 29, 29, 0.49);
   border-collapse: collapse;
   width: 90%;
   padding: 0;

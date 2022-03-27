@@ -4,7 +4,7 @@ import React from 'react';
 function Categorias() {
     return (
         <React.Fragment>
-            <h1>Categorias</h1>
+            <h1 className='headDetalle'>Categorias</h1>
             <table>
                 {/* comienza componente detalle */}
                 <thead>
