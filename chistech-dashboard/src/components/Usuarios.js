@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import getData from '../services/getData';
 import { Link } from 'react-router-dom'
 const urlUsuarios = `users`;
-let cosito = [];
+let users = [];
 
 function Usuarios(props) {
 
@@ -16,14 +16,11 @@ function Usuarios(props) {
             }
             const data = res.data;
            
-            cosito = obj.array
-            
+            users = obj.array
+            console.log(users);
         }
     )
- 
-  
-  
-        return (
+    return (
         <React.Fragment>
             <h1 className='headDetalle'>Usuarios</h1>
             <table>
@@ -37,12 +34,12 @@ function Usuarios(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                        {users.map(user => <tr>
+                            <td>{user.user_name}</td>
+                            <td>{user.first_name}{" "}{user.last_name}</td>
+                            <td>{user.email}</td>
+                            <td>{user.admin}</td>
+                            </tr>)}  
                 </tbody>
                 {/* termina componente detalle */}
             </table>
