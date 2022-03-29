@@ -94,6 +94,17 @@ color:rgba(253, 252, 252, 0.9);
 .headDetalle {
   color:rgba(253, 252, 252, 0.9);
 }
+td {
+  padding-top: 0.2rem;
+  color:rgba(253, 252, 252, 0.9);
+  font-size: 1.2rem;
+}
+
+tr {
+  padding-top: 0.5rem;
+  color:rgba(253, 252, 252, 0.9);
+  font-size: 1.5rem;
+}
 
 table {
   background-color: rgba(29, 29, 29, 0.49);

@@ -32,7 +32,6 @@ function Categorias(props) {
                 {/* comienza componente detalle */}
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Categoria</th>
                     </tr>
                 </thead>
