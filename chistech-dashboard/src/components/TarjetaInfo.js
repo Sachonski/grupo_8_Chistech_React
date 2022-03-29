@@ -15,6 +15,7 @@ const urlCategorias = `sales/category`
 
 
 function TarjetaInfo(props) {
+
     const inicio = { info: '', array: [] };
 
     let [valor, setValor] = useState(inicio);
@@ -29,7 +30,6 @@ function TarjetaInfo(props) {
                 }
                 setValor(obj);
             }),
-        // .catch((e) => { console.log(e) }),
 
         Productos: () => getData(urlProductos)
             .then(res => {
@@ -42,9 +42,7 @@ function TarjetaInfo(props) {
                 const sinStockTotal = data.length - StockTotal;
                 obj.array = [`Sin Stock: ${sinStockTotal}`, `En Stock: ${StockTotal}`];
                 setValor(obj);
-                
             }),
-        // .catch((e) => { console.log(e) }),
 
         "Ultimo Producto Agregado": () => getData(urlProductos)
             .then(res => {
@@ -54,7 +52,6 @@ function TarjetaInfo(props) {
                 };
                 setValor(obj)
             }),
-        // .catch((e) => { console.log(e) }),
 
         Usuarios: () => getData(urlUsuarios)
             .then(res => {
@@ -68,7 +65,6 @@ function TarjetaInfo(props) {
                 obj.array = [`Clientes: ${clientesTotal}`, `Administradores: ${adminTotal}`];
                 setValor(obj);
             }),
-        // .catch((e) => { console.log(e) }),
 
         'Cantidad de Productos Vendidos': () => getData(urlVentas)
             .then(res => {
@@ -78,7 +74,6 @@ function TarjetaInfo(props) {
                 };
                 setValor(total);
             }),
-        // .catch((e) => { console.log(e) }),
 
         'Cantidad de Ventas': () => getData(urlVentasTotales)
             .then(res => {
@@ -88,36 +83,32 @@ function TarjetaInfo(props) {
                 };
                 setValor(total);
             }),
-        // .catch((e) => { console.log(e) }),
 
         'Top 5 de Productos': () => getData(urlTop5)
             .then(res => {
-                const top5 = { 
-                    info : '', 
-                    array : res.data[0].map(it => it.name)
+                const top5 = {
+                    info: '',
+                    array: res.data[0].map(it => it.name)
                 };
                 setValor(top5)
             }),
-        // .catch((e) => { console.log(e) }),
 
         'Ultimas 5 Ventas': () => getData(urlUltimosProducto)
             .then(res => {
-                const ultimas = { 
-                    info : '',
-                    array : res.data.map(it => `Factura: ${it.invoice}`)
+                const ultimas = {
+                    info: '',
+                    array: res.data.map(it => `Factura: ${it.invoice}`)
                 };
                 setValor(ultimas)
             })
-            // .catch((e) => { console.log('error en ventas', e) })
     }
 
     useEffect(() => {
         if (props.titulo) {
             strategies[props.titulo]()
-            .catch((e) => { console.log('error en ventas', e) });
+                .catch((e) => { console.log('error en ventas', e) });
         }
     }, []);
-
 
     return (
         <React.Fragment>
@@ -132,7 +123,6 @@ function TarjetaInfo(props) {
                         {valor.array.map((item, index) => <li key={index}>{item}</li>)}
                     </ul>
                 </div>
-
             </div>
         </React.Fragment>
     )

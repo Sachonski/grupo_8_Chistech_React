@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import getData from '../services/getData';
-import { Link } from 'react-router-dom'
 const urlUsuarios = `users`;
 let users = [];
 
-function Usuarios(props) {
-
-    const inicio = {array: [] };
-        
+function Usuarios() {
     getData(urlUsuarios)
-        .then(res =>   {
+        .then(res => {
             const obj = {
-                              
                 array: res.data.map(item => item)
             }
-            const data = res.data;
-           
             users = obj.array
             console.log(users);
-        }
-    )
+        })
+
     return (
         <React.Fragment>
             <h1 className='headDetalle'>Usuarios</h1>
@@ -34,18 +27,15 @@ function Usuarios(props) {
                     </tr>
                 </thead>
                 <tbody>
-                        {users.map(user => <tr>
-                            <td>{user.user_name}</td>
-                            <td>{user.first_name}{" "}{user.last_name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.admin}</td>
-                            </tr>
-                        
-                        )}  
+                    {users.map(user => <tr>
+                        <td>{user.user_name}</td>
+                        <td>{user.first_name}{" "}{user.last_name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.admin}</td>
+                    </tr>)}
                 </tbody>
                 {/* termina componente detalle */}
             </table>
-
         </React.Fragment>
     );
 }

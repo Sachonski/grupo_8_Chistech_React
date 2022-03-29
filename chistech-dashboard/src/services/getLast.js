@@ -8,5 +8,4 @@ export default function getLast() {
         .catch((error) => {
             console.log(error);
         });
-
 }
