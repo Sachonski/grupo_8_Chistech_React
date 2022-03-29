@@ -38,7 +38,6 @@ function Categorias(props) {
                 </thead>
                 <tbody>
                     {categories.map((category,index )=> <tr key = {index}>
-                        <td>{category.id}</td>
                         <td>{category.name}</td>
                     </tr>)}
                 </tbody>

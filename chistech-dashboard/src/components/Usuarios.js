@@ -9,10 +9,12 @@ function Usuarios() {
     let [valor, setValor] = useState(inicio);
     useEffect(() => {
 
+        let Administrador = "No";
         getData(urlUsuarios)
         .then(res => {
             const obj = {
                 array: res.data.map(item => item)
+                
             }
             users = obj.array
             setValor(obj)
@@ -38,7 +40,7 @@ function Usuarios() {
                         <td>{user.user_name}</td>
                         <td>{user.first_name}{" "}{user.last_name}</td>
                         <td>{user.email}</td>
-                        <td>{user.admin}</td>
+                        <td>{user.admin ? "Si" : "No"}</td>
                     </tr>)}
                 </tbody>
                 {/* termina componente detalle */}

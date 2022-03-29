@@ -40,7 +40,7 @@ function Productos() {
                         <td>{product.name}</td>
                         <td>{"$ "}{product.price}</td>
                         <td>{product.discount}{"%"}</td>
-                        <td>{product.stock}</td>
+                        <td>{product.stock ? "Si" : "No"}</td>
                     </tr>)}
                 </tbody>
                 {/* termina componente detalle */}
