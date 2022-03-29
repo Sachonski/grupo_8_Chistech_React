@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import getData from '../services/getData';
 const urlUsuarios = `users`;
 let users = [];
 
 function Usuarios() {
-    getData(urlUsuarios)
+    const inicio = { info: '', array: [] };
+
+    let [valor, setValor] = useState(inicio);
+    useEffect(() => {
+
+        getData(urlUsuarios)
         .then(res => {
             const obj = {
                 array: res.data.map(item => item)
             }
             users = obj.array
-            console.log(users);
+            setValor(obj)
         })
+
+    }, []);
 
     return (
         <React.Fragment>
@@ -27,7 +34,7 @@ function Usuarios() {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map(user => <tr>
+                    {users.map((user,index) => <tr key= {index}>
                         <td>{user.user_name}</td>
                         <td>{user.first_name}{" "}{user.last_name}</td>
                         <td>{user.email}</td>

@@ -1,17 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import getData from '../services/getData';
 const urlProductos = `products`;
 let products = [];
 
+
+
 function Productos() {
-    getData(urlProductos)
-        .then(res => {
-            const obj2 = {
-                array: res.data.map(item => item)
-            }
-            products = obj2.array
-            console.log(products);
-        })
+    const inicio = { info: '', array: [] };
+
+    let [valor, setValor] = useState(inicio);
+    useEffect(() => {
+
+        getData(urlProductos)
+            .then(res => {
+                const obj = {
+                    array: res.data.map(item => item)
+                }
+                products = obj.array
+                setValor(obj)
+            })
+
+    }, []);
 
     return (
         <React.Fragment>
@@ -27,7 +36,7 @@ function Productos() {
                     </tr>
                 </thead>
                 <tbody>
-                    {products.map(product => <tr>
+                    {products.map((product, index) => <tr key = {index}>
                         <td>{product.name}</td>
                         <td>{"$ "}{product.price}</td>
                         <td>{product.discount}{"%"}</td>
@@ -39,5 +48,7 @@ function Productos() {
         </React.Fragment>
     );
 }
+
+
 
 export default Productos

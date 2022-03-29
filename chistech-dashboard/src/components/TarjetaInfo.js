@@ -12,8 +12,6 @@ const urlTop5 = `sales/top5`;
 const urlUltimosProducto = `sales/last`;
 const urlCategorias = `sales/category`
 
-
-
 function TarjetaInfo(props) {
 
     const inicio = { info: '', array: [] };

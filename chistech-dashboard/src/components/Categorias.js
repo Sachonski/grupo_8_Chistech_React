@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import getData from '../services/getData';
 const urlCategorias = `sales/category`;
 let categories = [];
 
-function Categorias() {
-    getData(urlCategorias)
-        .then(res => {
-            const obj3 = {
-                array: res.data.map(item => item)
-            }
-            categories = obj3.array
-            console.log(categories);
-        })
+function Categorias(props) {
+
+    const inicio = { info: '', array: [] };
+
+    let [valor, setValor] = useState(inicio);
+
+    useEffect(() => {
+      
+            getData(urlCategorias)
+            .then(res => {
+                const obj = {
+                    array: res.data.map(item => item)
+                }
+                categories = obj.array
+                setValor(obj);
+            })
+
+    }, []);
+
+
+  
 
     return (
         <React.Fragment>
@@ -25,7 +37,7 @@ function Categorias() {
                     </tr>
                 </thead>
                 <tbody>
-                    {categories.map(category => <tr>
+                    {categories.map((category,index )=> <tr key = {index}>
                         <td>{category.id}</td>
                         <td>{category.name}</td>
                     </tr>)}
@@ -35,6 +47,8 @@ function Categorias() {
         </React.Fragment>
     );
 }
+
+
 
 export default Categorias
 
